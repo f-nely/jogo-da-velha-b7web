@@ -14,7 +14,6 @@ reset();
 // Events
 document.querySelector('.reset').addEventListener('click', reset);
 
-// Functions
 function reset() {
     warning = '';
 
@@ -30,5 +29,13 @@ function reset() {
     renderSquare();
     renderInfo();
 }
+
+function renderSquare() {
+    for (let i in square) {
+        let item = document.querySelector(`div[data-item=${i}]`);
+        item.innerHTML = square[i];
+    }
+}
+
 
 
