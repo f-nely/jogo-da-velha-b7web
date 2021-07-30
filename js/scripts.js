@@ -49,6 +49,8 @@ function renderSquare() {
         let item = document.querySelector(`div[data-item=${i}]`);
         item.innerHTML = square[i];
     }
+
+    checkGame();
 }
 
 function renderInfo() {
@@ -59,6 +61,19 @@ function renderInfo() {
 function togglePlayer() {
     player = (player === 'x') ? 'o' : 'x';
     renderInfo();
+}
+
+function checkGame() {
+    if (checkWinnerFor('x')) {
+        warning = 'O "x" venceu';
+        playing = false;
+    } else if (checkWinnerFor('o')) {
+        warning = 'O "o" venceu';
+        playing  = false;
+    } else if (isFull()) {
+        warning = 'Deu empate';
+        playing = false;
+    }
 }
 
 
