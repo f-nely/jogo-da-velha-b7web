@@ -56,5 +56,10 @@ function renderInfo() {
     document.querySelector('.resultado').innerHTML = warning;
 }
 
+function togglePlayer() {
+    player = (player === 'x') ? 'o' : 'x';
+    renderInfo();
+}
+
 
 
