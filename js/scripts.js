@@ -9,6 +9,8 @@ let player = '';
 let warning= '';
 let playing = false;
 
+reset();
+
 // Events
 document.querySelector('.reset').addEventListener('click', reset);
 
@@ -21,10 +23,12 @@ function reset() {
 
     for (let i in square) {
         square[i] = '';
-    }
+    } 
 
     playing = true;
 
     renderSquare();
     renderInfo();
 }
+
+
