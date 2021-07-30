@@ -20,8 +20,7 @@ document.querySelectorAll('.item').forEach(item => {
 // Functions
 function itemClick(event) {
     let item = event.target.getAttribute('data-item');
-    console.log('Clicou em ', item);
-    if (player && square[item] === '') {
+    if (playing && square[item] === '') {
         square[item] = player;
         renderSquare();
         togglePlayer();
