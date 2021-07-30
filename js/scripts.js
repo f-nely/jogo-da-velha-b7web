@@ -6,6 +6,25 @@ let square = {
 };
 
 let player = '';
-let winner= '';
+let warning= '';
 let playing = false;
 
+// Events
+document.querySelector('.reset').addEventListener('click', reset);
+
+// Functions
+function reset() {
+    warning = '';
+
+    let random = Math.floor(Math.random() * 2);
+    player = (random === 0) ? 'x' : 'o';
+
+    for (let i in square) {
+        square[i] = '';
+    }
+
+    playing = true;
+
+    renderSquare();
+    renderInfo();
+}
