@@ -17,6 +17,17 @@ document.querySelectorAll('.item').forEach(item => {
     item.addEventListener('click', itemClick);
 });
 
+// Functions
+function itemClick(event) {
+    let item = event.target.getAttribute('data-item');
+    console.log('Clicou em ', item);
+    if (player && square[item] === '') {
+        square[item] = player;
+        renderSquare();
+        togglePlayer();
+    }
+}
+
 function reset() {
     warning = '';
 
